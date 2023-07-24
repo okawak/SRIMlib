@@ -1,0 +1,5 @@
+source @ROOT_DIR@/../bin/thisroot.sh &> /dev/null
+
+export SRIMLIB_HOME=@PROJECT_SOURCE_DIR@
+export PATH=@CMAKE_INSTALL_PREFIX@/bin:$PATH
+export LD_LIBRARY_PATH=@CMAKE_INSTALL_PREFIX@/lib:$LD_LIBRARY_PATH

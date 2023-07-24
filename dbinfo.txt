@@ -1,0 +1,22 @@
+# funcname, beam, target, min energy, max energy, max thickness
+_24Mg12_in_He250torr,24Mg12,He250torr,0.01,200,3180
+_24Mg12_in_Mylar,24Mg12,Mylar,0.01,200,0.14865
+_24Mg12_in_Si,24Mg12,Si,0.01,200,0.11416
+_25Al13_in_He250torr,25Al13,He250torr,0.01,200,2750
+_25Al13_in_Mylar,25Al13,Mylar,0.01,200,0.12891
+_25Al13_in_Si,25Al13,Si,0.01,200,0.09927
+_26Si13_in_He250torr,26Si13,He250torr,0.01,200,2400
+_26Si13_in_Mylar,26Si13,Mylar,0.01,200,0.11244
+_26Si13_in_Si,26Si13,Si,0.01,200,0.08678
+_26Si14_in_He250torr,26Si14,He250torr,0.01,200,2400
+_26Si14_in_Mylar,26Si14,Mylar,0.01,200,0.11244
+_26Si14_in_Si,26Si14,Si,0.01,200,0.08678
+_29P15_in_He250torr,29P15,He250torr,0.01,200,2050
+_29P15_in_Mylar,29P15,Mylar,0.01,200,0.09651
+_29P15_in_Si,29P15,Si,0.01,200,0.07502
+_a_in_He250torr,a,He250torr,0.01,200,410380
+_a_in_Mylar,a,Mylar,0.01,200,16.95
+_a_in_Si,a,Si,0.01,200,12.24
+_p_in_He250torr,p,He250torr,0.01,200,4.91e+06
+_p_in_Mylar,p,Mylar,0.01,200,197.5
+_p_in_Si,p,Si,0.01,200,138.7

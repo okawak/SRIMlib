@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+include("${CMAKE_CURRENT_LIST_DIR}/SRIMlibTargets.cmake")
+
+# Definition of variables
+set(SRIMLIB_DIR "@CMAKE_INSTALL_PREFIX@")

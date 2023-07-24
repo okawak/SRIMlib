@@ -1,0 +1,14 @@
+{
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+
+    "lpubsppop01.autoTimeStamp.filenamePattern": ".h|.cc",
+    "lpubsppop01.autoTimeStamp.modifiedTimeStart": "   @Last modified :",
+    "lpubsppop01.autoTimeStamp.momentFormat": " YYYY-MM-DD HH:mm:ss",
+    "lpubsppop01.autoTimeStamp.birthTimeStart": "   @Created date  :",
+    "lpubsppop01.autoTimeStamp.lineLimit": 7,
+
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "C_Cpp.intelliSenseEngine": "Tag Parser"
+}
