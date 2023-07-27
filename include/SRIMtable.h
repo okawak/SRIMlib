@@ -3,7 +3,7 @@
    @description   : useful function from SRIM output textfiles
    @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
    @Created date  : 2023-05-26 17:34:19
-   @Last modified : 2023-06-08 15:26:12
+   @Last modified : 2023-07-27 16:14:44
 */
 
 #ifndef _SRIMTABLE_H_
@@ -35,8 +35,7 @@ private:
    TSpline3 *strg_y;
    TSpline3 *strg_x;
 
-
-   void EnergyCheck(Double_t energy);
+   Int_t EnergyCheck(Double_t energy);
    Bool_t ThicknessCheck(Double_t thickness);
 };
 

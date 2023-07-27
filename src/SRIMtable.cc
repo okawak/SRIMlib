@@ -3,7 +3,7 @@
    @description   : useful function from SRIM output textfiles
    @Author        : Kodai Okawa<okawa@cns.s.u-tokyo.ac.jp>
    @Created date  : 2023-05-26 17:52:55
-   @Last modified : 2023-06-08 15:36:58
+   @Last modified : 2023-07-27 16:16:55
 */
 
 #include <iostream>
@@ -45,16 +45,23 @@ SRIMtable::~SRIMtable() {}
 
 Double_t SRIMtable::GetEloss(Double_t energy)
 {
-   EnergyCheck(energy);
+   Int_t flag = EnergyCheck(energy);
+   if (flag == 0) {
+      return 0.0;
+   }
    Double_t result = eloss_tot->Eval(energy);
    return result;
 }
 
 Double_t SRIMtable::GetNewE(Double_t energy, Double_t thickness)
 {
-   EnergyCheck(energy);
+   Int_t flag = EnergyCheck(energy);
+   if (flag == 0) {
+      return 0.0;
+   }
    Bool_t isNormal = ThicknessCheck(thickness);
-   if(!isNormal) return 0.0;
+   if (!isNormal)
+      return 0.0;
 
    Double_t result = energy;
    Double_t ini_range = range->Eval(energy);
@@ -68,11 +75,15 @@ Double_t SRIMtable::GetNewE(Double_t energy, Double_t thickness)
 
 Double_t SRIMtable::GetOldE(Double_t energy, Double_t thickness)
 {
-   EnergyCheck(energy);
+   Int_t flag = EnergyCheck(energy);
+   if (flag == 0) {
+      std::cerr << "out of energy range" << std::endl;
+      std::exit(1);
+   }
    Bool_t isNormal = ThicknessCheck(thickness);
-   if(!isNormal){
-     std::cerr << "out of thickenss range" << std::endl;
-     std::exit(1);
+   if (!isNormal) {
+      std::cerr << "out of thickenss range" << std::endl;
+      std::exit(1);
    }
 
    Double_t result = energy;
@@ -88,30 +99,41 @@ Double_t SRIMtable::GetOldE(Double_t energy, Double_t thickness)
 
 Double_t SRIMtable::GetRange(Double_t energy)
 {
-   EnergyCheck(energy);
+   Int_t flag = EnergyCheck(energy);
+   if (flag == 0) {
+      return 0.0;
+   }
    Double_t result = range->Eval(energy);
    return result;
 }
 
 Double_t SRIMtable::GetStrg(Double_t energy)
 {
-   EnergyCheck(energy);
+   Int_t flag = EnergyCheck(energy);
+   if (flag == 0) {
+      return 0.0;
+   }
    Double_t result = strg_y->Eval(energy);
    return result;
 }
 
-void SRIMtable::EnergyCheck(Double_t energy)
+Int_t SRIMtable::EnergyCheck(Double_t energy) // 0: zero 1: normal
 {
-   if (energy < min || max < energy) {
-      std::cerr << "ERROR: out of range (" << min << " < input energy < " << max << " needed)" << std::endl;
+   if (max < energy) {
+      std::cerr << "ERROR: out of range (input energy < " << max << " needed)" << std::endl;
       std::exit(1);
    }
+
+   if (energy < min) {
+      return 0;
+   }
+   return 1;
 }
 
 Bool_t SRIMtable::ThicknessCheck(Double_t thickness)
 {
    if (thickness > thick_max) {
-     return false;
+      return false;
    }
    return true;
 }
