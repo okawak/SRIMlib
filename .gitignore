@@ -32,6 +32,7 @@
 *.app
 
 # Others
+.vscode/
 build/
 install/
 thisSRIMlib.sh
