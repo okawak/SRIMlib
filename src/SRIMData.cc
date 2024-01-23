@@ -70,7 +70,7 @@ SRIMtable *SRIMData::GetTable(TString beam, TString target) {
 
     if (itr < 0) {
         std::cout << "[SRIMlib] incorrect beam (" << beam << ") or target (" << target << ") input, need update SRIM data" << std::endl;
-        return NULL;
+        return nullptr;
     }
     SRIMtable *tb = new SRIMtable(funcnames[itr], vec_min_e[itr], vec_max_e[itr], vec_max_thick[itr]);
     return tb;
