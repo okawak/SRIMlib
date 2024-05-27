@@ -32,7 +32,11 @@
 *.app
 
 # Others
+compile_commands.json
+.cache
 .vscode/
 build/
 install/
 thisSRIMlib.sh
+dbinfo.txt
+
